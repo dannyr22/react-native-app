@@ -9,6 +9,7 @@ import 'react-native-gesture-handler';
 
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 import {Node} from 'react';
 import {
   SafeAreaView,
@@ -29,7 +30,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 const Section = ({children, title}) => {
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = useColorScheme() === 'light';
   return (
     <View style={styles.sectionContainer}>
       <Text
@@ -55,11 +56,13 @@ const Section = ({children, title}) => {
 };
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = useColorScheme() === 'light';
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  const border = styles.bordering;
 
   return (
     <NavigationContainer>
@@ -68,7 +71,7 @@ const App = () => {
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={backgroundStyle}>
-          <Header />
+          <Header style={border} />
           <View
             style={{
               backgroundColor: isDarkMode ? Colors.black : Colors.white,
@@ -110,6 +113,9 @@ const styles = StyleSheet.create({
   },
   highlight: {
     fontWeight: '700',
+  },
+  bordering: {
+    opacity: 0.1,
   },
 });
 

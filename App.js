@@ -126,10 +126,28 @@ import {
 
 const HomeScreen = ({navigation}) => {
   return (
-    <View>
-      <Text>This is the home screen</Text>
-      <Button title="Home" onPress={() => navigation.navigate('details')} />
-    </View>
+    <>
+      <View style={styles.homeScreen}>
+        <View style={styles.header}>
+          <Text style={styles.headerText}>Puppy Train'a'brain</Text>
+        </View>
+        <View style={styles.mainContent}>
+          <Button title="Let's start the training"></Button>
+        </View>
+        {/* <Text>This is the home screen</Text>
+        <Button
+          title="Details"
+          onPress={() => navigation.navigate('details')}
+        />
+      </View>
+      <View style={styles.sectionHalf}>
+        <Text>This is the home screen</Text>
+        <Button
+          title="Details"
+          onPress={() => navigation.navigate('details')}
+        /> */}
+      </View>
+    </>
   );
 };
 
@@ -172,6 +190,30 @@ const styles = StyleSheet.create({
   },
   bordering: {
     opacity: 0.1,
+  },
+  sectionHalf: {
+    height: '50%',
+  },
+  header: {
+    height: '10%',
+    backgroundColor: '#fed8b1',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  headerText: {
+    fontWeight: 'bold',
+    fontSize: 24,
+    textTransform: 'uppercase',
+    textAlign: 'center',
+    color: '#000',
+  },
+  homeScreen: {
+    backgroundColor: '#fed8b1',
+    height: '100%',
+  },
+  mainContent: {
+    height: '100%',
+    justifyContent: 'center',
   },
 });
 

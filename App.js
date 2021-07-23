@@ -11,6 +11,8 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Node} from 'react';
+import {SignIn, CreateAccount, Profile, Home} from './Screens';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
   SafeAreaView,
   ScrollView,
@@ -128,13 +130,13 @@ const HomeScreen = ({navigation}) => {
   return (
     <>
       <View style={styles.homeScreen}>
-        <View style={styles.header}>
+        {/* <View style={styles.header}>
           <Text style={styles.headerText}>Puppy Train'a'brain</Text>
         </View>
         <View style={styles.mainContent}>
           <Button title="Let's start the training"></Button>
-        </View>
-        {/* <Text>This is the home screen</Text>
+        </View> */}
+        <Text>This is the home screen</Text>
         <Button
           title="Details"
           onPress={() => navigation.navigate('details')}
@@ -145,7 +147,7 @@ const HomeScreen = ({navigation}) => {
         <Button
           title="Details"
           onPress={() => navigation.navigate('details')}
-        /> */}
+        />
       </View>
     </>
   );
